@@ -17,9 +17,9 @@ const fsPromises = require('fs/promises')
 
 const main = async () => {
   try {
-    let txt1 = await fsPromises.readFileSync('hello.txt', 'utf-8')
+    let txt1 = await fsPromises.readFile('hello.txt', 'utf-8')
     txt1 = txt1.toUpperCase()
-    fsPromises.writeFileSync('hello.txt', txt1)
+    await fsPromises.writeFile('hello.txt', txt1)
   } catch (e) {
     console.log(e.message)
   }
